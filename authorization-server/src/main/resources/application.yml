@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: authorization
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sso_oauth?useUnicode=true&characterEncoding=utf-8&useSSL=false
+  thymeleaf:
+    prefix: classpath:/views/
+    suffix: .html
+    cache: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+oauth2:
+  loginProcessUrl: /auth/authorize
+  tokenSigningKey: 123456123
+  tokenStoreType: jwt
